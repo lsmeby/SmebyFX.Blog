@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "Footer.css",
+  "sources": [
+    "Footer.less"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACI,qBAAA;;AADJ,WAGI;EACI,kBAAA;EACA,aAAA;;AALR,WAGI,eAII;EACI,SAAA"
+}

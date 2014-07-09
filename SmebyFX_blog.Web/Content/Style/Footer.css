@@ -1,0 +1,11 @@
+﻿.pageFooter {
+  background: lightgray;
+}
+.pageFooter .footerContent {
+  text-align: center;
+  padding: 20px;
+}
+.pageFooter .footerContent p {
+  margin: 0;
+}
+/*# sourceMappingURL=Footer.css.map */

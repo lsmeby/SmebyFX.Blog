@@ -1,0 +1,58 @@
+﻿.fxRow {
+  display: block;
+  overflow: hidden;
+}
+.fxRow .fxCol-1,
+.fxRow .fxCol-2,
+.fxRow .fxCol-3,
+.fxRow .fxCol-4,
+.fxRow .fxCol-5,
+.fxRow .fxCol-6,
+.fxRow .fxCol-7,
+.fxRow .fxCol-8,
+.fxRow .fxCol-9,
+.fxRow .fxCol-10,
+.fxRow .fxCol-11,
+.fxRow .fxCol-12 {
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.fxRow .fxCol-1 {
+  width: 8.3333%;
+}
+.fxRow .fxCol-2 {
+  width: 16.6666%;
+}
+.fxRow .fxCol-3 {
+  width: 25%;
+}
+.fxRow .fxCol-4 {
+  width: 33.3333%;
+}
+.fxRow .fxCol-5 {
+  width: 41.6666%;
+}
+.fxRow .fxCol-6 {
+  width: 50%;
+}
+.fxRow .fxCol-7 {
+  width: 58.3333%;
+}
+.fxRow .fxCol-8 {
+  width: 66.6666%;
+}
+.fxRow .fxCol-9 {
+  width: 75%;
+}
+.fxRow .fxCol-10 {
+  width: 83.3333%;
+}
+.fxRow .fxCol-11 {
+  width: 91.6666%;
+}
+.fxRow .fxCol-12 {
+  width: 100%;
+}
+/*# sourceMappingURL=SmebyFX.Grid.css.map */

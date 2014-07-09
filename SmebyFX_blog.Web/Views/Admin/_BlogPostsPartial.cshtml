@@ -1,0 +1,25 @@
+﻿@using System.Globalization
+@model IEnumerable<SmebyFX_blog.Post.Domain.Post>
+@{
+      var culture = new CultureInfo("en-US");         
+}
+<h2>Blog posts <a href="#">+</a></h2>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Published</th>
+        <th>Modified</th>
+        <th>Views</th>
+    </tr>
+    @foreach (var post in Model)
+    {
+        var modified = post.Modified != null ? post.Modified.Value.ToString("d", culture) : string.Empty;
+        <tr>
+            <td>@post.Title</td>
+            <td>@post.Published.ToString("d", culture)</td>
+            <td>@modified</td>
+            <td>?</td>
+        </tr>
+    }
+</table>

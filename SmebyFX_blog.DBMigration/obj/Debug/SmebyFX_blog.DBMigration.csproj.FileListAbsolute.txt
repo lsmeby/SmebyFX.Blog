@@ -1,0 +1,16 @@
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\SmebyFX_blog_local.mdf
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\SmebyFX_blog_local_log.ldf
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\SmebyFX_blog.DBMigration.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\SmebyFX_blog.DBMigration.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\FluentMigrator.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\FluentMigrator.Runner.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\log4net.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\SmebyFX_blog.Data.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\SmebyFX_blog.Data.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\FluentMigrator.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\FluentMigrator.xml
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\FluentMigrator.Runner.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\bin\Debug\log4net.xml
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\obj\Debug\SmebyFX_blog.DBMigration.csprojResolveAssemblyReference.cache
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\obj\Debug\SmebyFX_blog.DBMigration.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.DBMigration\obj\Debug\SmebyFX_blog.DBMigration.pdb

@@ -1,0 +1,39 @@
+﻿article {
+    
+    h1 {
+        margin-top: 0;
+        font-size: @FXarticleHeading;
+
+        a {
+            color: @FXblack;
+            text-decoration: none;
+
+            &:hover {
+                color: @FXblue;
+            }
+        }
+    }
+
+    .postPublished {
+        color: @FXgray;
+    }
+
+    .postTags {
+
+        a {
+            text-decoration: none;
+        }
+
+        span {
+            background: @FXblue;
+            color: @FXwhite;
+            margin-right: 5px;
+            padding: 5px;
+        }
+    }
+
+    pre {
+        font-family: Consolas, Courier, monospace;
+        overflow-x: scroll;
+    }
+}

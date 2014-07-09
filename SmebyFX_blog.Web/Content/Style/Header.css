@@ -1,0 +1,11 @@
+﻿.pageHeader {
+  background: #0094ff;
+  color: white;
+}
+.pageHeader .headerContent {
+  padding: 20px;
+}
+.pageHeader .headerContent h1 {
+  margin: 0;
+}
+/*# sourceMappingURL=Header.css.map */

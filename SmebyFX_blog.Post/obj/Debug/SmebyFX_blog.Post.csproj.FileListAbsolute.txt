@@ -1,0 +1,12 @@
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\SmebyFX_blog_local.mdf
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\SmebyFX_blog_local_log.ldf
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\SmebyFX_blog.Post.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\SmebyFX_blog.Post.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\Dapper.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\SmebyFX_blog.Data.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\SmebyFX_blog.Data.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\Dapper.pdb
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\bin\Debug\Dapper.xml
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\obj\Debug\SmebyFX_blog.Post.csprojResolveAssemblyReference.cache
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\obj\Debug\SmebyFX_blog.Post.dll
+E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Post\obj\Debug\SmebyFX_blog.Post.pdb

@@ -1,0 +1,52 @@
+﻿@using SmebyFX_blog.Web.ViewModels
+@model IEnumerable<SmebyFX_blog.Post.Domain.Tag>
+
+<h2>Tags <a href="#" id="newTag">+</a></h2>
+
+<span>@ViewBag.TagError</span>
+
+<table class="tagList">
+    <tr>
+        <th>Title</th>
+        <th>Url slug</th>
+        <th>Usages</th>
+        <th></th>
+    </tr>
+    @foreach (var tag in Model)
+    {
+        <tr>
+            <td class="trTitle">@tag.Title</td>
+            <td class="trSlug">@tag.UrlSlug</td>
+            <td>@tag.Usages</td>
+            <td>
+                <span class="trId">@tag.Id</span>
+                <button class="editTag">E</button>
+                @using (Html.BeginForm("DeleteTag", "Admin", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="tagId" value="@tag.Id"/>
+                    <input type="submit" value="D"/>
+                }
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="overlayArea">
+    <div class="overlayAreaBackgroundOverlay"></div>
+    <div class="overlayAreaCloseButton">✖</div>
+    <div class="overlayAreaContent">
+        @using (Html.BeginForm("CreateOrEditTag",
+            "Admin",
+            new {},
+            FormMethod.Post,
+            new {id = "editTagForm"}))
+        {
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="TagId" />
+            <input type="text" name="TagTitle" required />
+            <input type="text" name="TagUrlSlug" />
+            <input type="submit" value="Save" />
+        }
+    </div>
+</div>

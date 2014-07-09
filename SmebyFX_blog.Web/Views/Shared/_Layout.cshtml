@@ -1,0 +1,31 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/Style")
+    <title>SmebyFX Blog</title>
+</head>
+<body>
+    <header role="banner" class="pageHeader">
+        <div class="inner headerContent">
+            @{ Html.RenderPartial("_HeaderPartial"); }
+        </div>
+    </header>
+    <main role="main" class="fxRow inner">
+        <div id="mainContent" class="fxCol-9">
+            @RenderBody()
+        </div>
+        <aside class="pageAbout fxCol-3">
+            @{ Html.RenderPartial("_AboutPartial"); }
+        </aside>
+    </main>
+    <footer role="contentinfo" class="pageFooter">
+        <div class="inner footerContent">
+            <p>@DateTime.Now.ToString("yyyy") &copy; SmebyFX</p>
+        </div>
+    </footer>
+    @Scripts.Render("~/Scripts/Libs")
+    @Scripts.Render("~/Scripts/Admin")
+</body>
+</html>

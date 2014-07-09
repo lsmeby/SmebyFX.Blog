@@ -1,0 +1,7 @@
+﻿@model SmebyFX_blog.Web.ViewModels.DashboardViewModel
+
+<h1>Dashboard</h1>
+
+@{ Html.RenderPartial("_BlogPostsPartial", Model.Posts); }
+
+@{ Html.RenderPartial("_TagsPartial", Model.Tags); }

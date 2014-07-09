@@ -1,0 +1,42 @@
+﻿@using System.Globalization
+@model SmebyFX_blog.Post.Domain.Post
+           
+@{
+    var culture = new CultureInfo("en-US");
+    var publishedString = string.Format("Published {0}{1}", Model.Published.ToString("D", culture),
+        Model.Modified.HasValue ? string.Format(", modified {0}", Model.Modified.Value.ToString("D", culture)) : "");
+}
+
+<article>
+    
+    <header>
+        <h1>
+            <a href="@Url.Action("BlogPost", 
+                                "BlogPost", 
+                                new
+                                {
+                                    year = Model.Published.Year, 
+                                    month = Model.Published.Month, 
+                                    day = Model.Published.Day,
+                                    title = Model.UrlSlug
+                                })">@Model.Title</a>
+        </h1>
+        <p class="postPublished">@publishedString</p>
+        <div class="postTags">
+            @foreach (var tag in Model.Tags)
+            {
+                <a href="@Url.Action("BlogPostsByTag", "BlogPost", new {tag = tag.UrlSlug})">
+                    <span>@tag.Title</span>
+                </a>
+            }
+        </div>
+    </header>
+    
+    @if (!string.IsNullOrEmpty(Model.Description))
+    {
+        <p class="postDescription">@Model.Description</p>
+    }
+    
+    <div class="postContent">@Html.Raw(Model.Content)</div>
+
+</article>

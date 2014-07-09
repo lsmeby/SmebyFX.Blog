@@ -1,0 +1,8 @@
+﻿@model SmebyFX_blog.Web.ViewModels.PostsWithTitleViewModel
+
+<h1>@Model.Title</h1>
+
+@foreach (var post in Model.Posts)
+{
+    Html.RenderPartial("_BlogPostPartial", post);
+}

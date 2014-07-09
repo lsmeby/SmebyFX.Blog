@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "Article.css",
+  "sources": [
+    "Article.less"
+  ],
+  "names": [],
+  "mappings": "AAAA,OAEI;EACI,aAAA;;AAHR,OAMI;EACI,WAAA;;AAPR,OAUI,UACI;EACI,mBAAA;EACA,YAAA;EACA,iBAAA;EACA,YAAA;;AAfZ,OAmBI;EACI,yCAAA;EACA,kBAAA"
+}
