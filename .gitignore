@@ -5,3 +5,5 @@ obj/
 #User files
 *.user
 *.suo
+
+packages/
