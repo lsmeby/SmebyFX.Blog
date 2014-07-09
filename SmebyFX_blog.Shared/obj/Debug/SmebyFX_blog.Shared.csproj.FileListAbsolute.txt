@@ -1,5 +1,0 @@
-E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Shared\bin\Debug\SmebyFX_blog.Shared.dll
-E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Shared\bin\Debug\SmebyFX_blog.Shared.pdb
-E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Shared\obj\Debug\SmebyFX_blog.Shared.dll
-E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Shared\obj\Debug\SmebyFX_blog.Shared.pdb
-E:\Prosjekter\Web\SmebyFX_blog\SmebyFX_blog.Shared\obj\Debug\SmebyFX_blog.Shared.csprojResolveAssemblyReference.cache
