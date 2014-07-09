@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5A52A42F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmebyFX_blog.Post.IntegrationTest", "test\SmebyFX_blog.Post.IntegrationTest\SmebyFX_blog.Post.IntegrationTest.csproj", "{A3A8E14E-8DF7-4EC2-92EF-68FD0987ACD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmebyFX_blog.Post.UnitTest", "SmebyFX_blog.Post.UnitTest\SmebyFX_blog.Post.UnitTest.csproj", "{EED0F10E-38DB-40C4-BEAD-B4742D939FC6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmebyFX_blog.Post.UnitTest", "test\SmebyFX_blog.Post.UnitTest\SmebyFX_blog.Post.UnitTest.csproj", "{EED0F10E-38DB-40C4-BEAD-B4742D939FC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmebyFX_blog.Shared", "SmebyFX_blog.Shared\SmebyFX_blog.Shared.csproj", "{41BFD855-86C4-43AA-992F-A78575A090C7}"
 EndProject

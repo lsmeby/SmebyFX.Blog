@@ -58,11 +58,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SmebyFX_blog.Data\SmebyFX_blog.Data.csproj">
+    <ProjectReference Include="..\..\SmebyFX_blog.Data\SmebyFX_blog.Data.csproj">
       <Project>{EDD25CB6-A7FF-4EE1-AD85-A6DB1A40208E}</Project>
       <Name>SmebyFX_blog.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SmebyFX_blog.Post\SmebyFX_blog.Post.csproj">
+    <ProjectReference Include="..\..\SmebyFX_blog.Post\SmebyFX_blog.Post.csproj">
       <Project>{BA51AE73-A22B-4708-9EEC-8470B9DCFDEE}</Project>
       <Name>SmebyFX_blog.Post</Name>
     </ProjectReference>
