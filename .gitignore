@@ -7,3 +7,7 @@
 *.suo
 
 packages/
+
+#DB
+*.mdf
+*.ldf
