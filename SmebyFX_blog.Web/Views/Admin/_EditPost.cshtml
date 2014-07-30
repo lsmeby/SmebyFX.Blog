@@ -1,0 +1,45 @@
+﻿@model SmebyFX_blog.Web.ViewModels.CreatePostViewModel
+
+@Html.ValidationSummary()
+  
+@Html.AntiForgeryToken()
+@Html.HiddenFor(model => model.SelectedTags)
+
+<div>
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+</div>
+<div>
+    @Html.LabelFor(model => model.Description)
+</div>
+<div>
+    @Html.TextAreaFor(model => model.Description)
+</div>
+<div>
+    @Html.LabelFor(model => model.Content)
+</div>
+<div>
+    @Html.TextAreaFor(model => model.Content, new { id = "content" })
+</div>
+
+<div>
+    @Html.LabelFor(model => model.UrlSlug)
+    @Html.TextBoxFor(model => model.UrlSlug)
+</div>
+
+<div id="tagCheckBoxes">
+    @foreach (var tag in Model.Tags)
+    {
+        <div>
+            @if (Model.AssignedTags.Contains(tag.Id))
+            {
+                <input type="checkbox" value="@tag.Id" checked />
+            }
+            else
+            {
+                <input type="checkbox" value="@tag.Id" />
+            }
+            @tag.Title
+        </div>
+    }
+</div>

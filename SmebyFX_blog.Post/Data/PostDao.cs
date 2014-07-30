@@ -26,6 +26,13 @@ namespace SmebyFX_blog.Post.Data
             return Run(con => con.Query<Domain.Post>(sql, new {tagId})).ToList();
         }
 
+        public virtual Domain.Post GetPost(int postId)
+        {
+            const string sql = @"SELECT * FROM Post
+                                WHERE Id = @postId";
+            return Run(con => con.Query<Domain.Post>(sql, new{postId})).FirstOrDefault();
+        }
+
         public virtual Domain.Post GetPost(string postUrlSlug, DateTime date)
         {
             const string sql = @"SELECT * FROM Post
@@ -106,7 +113,7 @@ namespace SmebyFX_blog.Post.Data
         {
             post.Description = post.Description ?? string.Empty;
             post.Content = post.Content ?? string.Empty;
-            post.UrlSlug = post.UrlSlug ?? HttpUtility.UrlEncode(post.Title);
+            post.UrlSlug = post.UrlSlug ?? HttpUtility.UrlEncode(post.Title.Replace(' ', '-'));
         }
     }
 }

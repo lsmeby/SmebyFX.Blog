@@ -57,6 +57,10 @@
       <Project>{edd25cb6-a7ff-4ee1-ad85-a6db1a40208e}</Project>
       <Name>SmebyFX_blog.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SmebyFX_blog.Shared\SmebyFX_blog.Shared.csproj">
+      <Project>{41BFD855-86C4-43AA-992F-A78575A090C7}</Project>
+      <Name>SmebyFX_blog.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

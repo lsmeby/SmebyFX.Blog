@@ -1,0 +1,14 @@
+﻿@model SmebyFX_blog.Web.ViewModels.CreatePostViewModel
+
+@section tinyMCE
+{
+    @{ Html.RenderPartial("_TinyMCESetupPartial"); }
+}
+
+<h1>Create blog post</h1>
+
+@using (Html.BeginForm("CreatePost", "Admin", FormMethod.Post, new { @class = "submitPostForm" }))
+{
+    Html.RenderPartial("_EditPost", Model);
+    <input class="submitPostButton" type="submit" value="Create" />
+}

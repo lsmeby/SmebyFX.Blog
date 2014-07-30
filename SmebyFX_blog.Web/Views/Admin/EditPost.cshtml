@@ -1,0 +1,36 @@
+﻿@model SmebyFX_blog.Web.ViewModels.CreatePostViewModel
+
+@section tinyMCE
+{
+    @{ Html.RenderPartial("_TinyMCESetupPartial"); }
+}
+
+<h1>Edit blog post</h1>
+
+<a href="#" id="deletePost">Delete post</a>
+
+@using (Html.BeginForm("EditPost", "Admin", FormMethod.Post, new {@class = "submitPostForm"}))
+{
+    @Html.HiddenFor(model => model.PostId)
+    Html.RenderPartial("_EditPost", Model);
+    <input class="submitPostButton" type="submit" value="Update" />
+}
+
+<div class="overlayArea">
+    <div class="overlayAreaBackgroundOverlay"></div>
+    <div class="overlayAreaCloseButton">✖</div>
+    <div class="overlayAreaContent">
+        @using (Html.BeginForm("DeletePost",
+            "Admin",
+            null,
+            FormMethod.Post,
+            new { id = "deletePostForm" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.PostId)
+            <p>Are you sure you want to delete this post?</p>
+            <button id="cancelButton">Cancel</button>
+            <input type="submit" value="Delete" />
+        }
+    </div>
+</div>

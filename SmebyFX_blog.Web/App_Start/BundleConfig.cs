@@ -9,6 +9,7 @@ namespace SmebyFX_blog.Web
             bundles.Add(CssBundle());
             bundles.Add(JsLibsBundle());
             bundles.Add(JsAdmin());
+            bundles.Add(TinyMce());
         }
 
         private static Bundle CssBundle()
@@ -27,6 +28,12 @@ namespace SmebyFX_blog.Web
         {
             return new Bundle("~/Scripts/Admin")
                 .Include("~/Scripts/Admin/*.js");
+        }
+
+        private static Bundle TinyMce()
+        {
+            return new Bundle("~/Plugins/tinyMCE")
+                .Include("~/Plugins/tinymce/tinymce.min.js");
         }
     }
 }

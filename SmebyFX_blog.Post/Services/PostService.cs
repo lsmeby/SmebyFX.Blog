@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using SmebyFX_blog.Post.Data;
 using SmebyFX_blog.Post.Domain;
+using SmebyFX_blog.Shared.Extensions;
 
 namespace SmebyFX_blog.Post.Services
 {
@@ -52,6 +53,19 @@ namespace SmebyFX_blog.Post.Services
             if (post == null)
             {
                 throw new ArgumentException(string.Format("Couldn't find post with url slug '{0}' from {1}", urlSlug, date.ToShortDateString()));
+            }
+
+            AttachTags(post);
+            return post;
+        }
+
+        public Domain.Post GetPost(int postId)
+        {
+            var post = _postDao.GetPost(postId);
+
+            if (post == null)
+            {
+                throw new ArgumentException(string.Format("Couldn't find post with id '{0}'", postId));
             }
 
             AttachTags(post);
@@ -109,6 +123,25 @@ namespace SmebyFX_blog.Post.Services
                     UrlSlug = urlSlug
                 });
             }
+        }
+
+        public void CreatePost(Domain.Post post)
+        {
+            var postId = _postDao.Add(post);
+            post.Tags.Materialize().ForEach(t => _postTagDao.AddTagToPost(postId, t.Id));
+        }
+
+        public void UpdatePost(Domain.Post post)
+        {
+            _postDao.Update(post);
+            _postTagDao.RemoveAllTagsFromPost(post.Id);
+            post.Tags.Materialize().ForEach(t => _postTagDao.AddTagToPost(post.Id, t.Id));
+        }
+
+        public void DeletePost(int postId)
+        {
+            _postTagDao.RemoveAllTagsFromPost(postId);
+            _postDao.Delete(postId);
         }
 
         public bool IsTagInUse(int tagId)

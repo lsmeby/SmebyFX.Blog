@@ -3,7 +3,7 @@
 @{
       var culture = new CultureInfo("en-US");         
 }
-<h2>Blog posts <a href="#">+</a></h2>
+<h2>Blog posts @Html.ActionLink("+", "CreatePost")</h2>
 
 <table>
     <tr>
@@ -16,7 +16,7 @@
     {
         var modified = post.Modified != null ? post.Modified.Value.ToString("d", culture) : string.Empty;
         <tr>
-            <td>@post.Title</td>
+            <td>@Html.ActionLink(post.Title, "EditPost", new {postId = post.Id})</td>
             <td>@post.Published.ToString("d", culture)</td>
             <td>@modified</td>
             <td>?</td>

@@ -62,7 +62,7 @@ namespace SmebyFX_blog.Post.Data
 
         private void Initialize(Tag tag)
         {
-            tag.UrlSlug = tag.UrlSlug ?? HttpUtility.UrlEncode(tag.Title);
+            tag.UrlSlug = tag.UrlSlug ?? HttpUtility.UrlEncode(tag.Title.Replace(' ', '-'));
         }
     }
 }

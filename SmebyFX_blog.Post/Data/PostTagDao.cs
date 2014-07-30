@@ -28,5 +28,12 @@ namespace SmebyFX_blog.Post.Data
                                 WHERE TagId = @tagId";
             return Run(con => con.Query<int>(sql, new {tagId})).First();
         }
+
+        public virtual void RemoveAllTagsFromPost(int postId)
+        {
+            const string sql = @"DELETE FROM PostTag
+                                WHERE PostId = @postId";
+            Run(con => con.Execute(sql, new {postId}));
+        }
     }
 }

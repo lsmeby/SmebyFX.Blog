@@ -1,0 +1,17 @@
+﻿@using System.Web.Optimization
+
+@Scripts.Render("~/Plugins/tinyMCE")
+<script type="text/javascript">
+        tinymce.init({
+            selector: "textarea#content",
+            height: 300,
+            plugins: ["link image media code"],
+            toolbar: "undo redo | styleselect | bold italic underline strikethrough | bullist numlist | link image media | code",
+            menubar: false,
+            style_formats: [
+                { title: "Heading", block: "h2" },
+                { title: "Paragraph", block: "p" },
+                { title: "Code", block: "pre" }
+            ]
+         });
+</script>

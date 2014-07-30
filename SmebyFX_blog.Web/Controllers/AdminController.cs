@@ -1,12 +1,19 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
-using SmebyFX_blog.Data.Tables;
 using SmebyFX_blog.Post.Services;
+using SmebyFX_blog.Shared.Extensions;
 using SmebyFX_blog.Web.Authentication;
 using SmebyFX_blog.Web.ViewModels;
+using WebGrease.Css.Extensions;
+using log4net;
 
 namespace SmebyFX_blog.Web.Controllers
 {
@@ -77,6 +84,13 @@ namespace SmebyFX_blog.Web.Controllers
                 var postService = new PostService();
                 postService.CreateOrEditTag(viewModel.TagId, viewModel.TagTitle, viewModel.TagUrlSlug);
             }
+            else
+            {
+                TempData["TagError"] = ModelState.Select(s => s.Value.Errors)
+                                                 .First(e => e.Count > 0)
+                                                 .Select(m => m.ErrorMessage)
+                                                 .FirstOrDefault();
+            }
             return RedirectToAction("Dashboard");
         }
 
@@ -95,6 +109,127 @@ namespace SmebyFX_blog.Web.Controllers
             {
                 postService.DeleteTag(tagId);
             }
+
+            return RedirectToAction("Dashboard");
+        }
+
+        [Route("CreatePost")]
+        public ActionResult CreatePost()
+        {
+            var postService = new PostService();
+            return View(new CreatePostViewModel
+            {
+                Tags = postService.GetTags(),
+                AssignedTags = new List<int>()
+            });
+        }
+
+        [Route("CreatePost")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePost(CreatePostViewModel viewModel)
+        {
+            var postService = new PostService();
+
+            if (ModelState.IsValid)
+            {
+                var tagStrings = viewModel.SelectedTags.Split('-');
+                var tagIds = new List<int>();
+
+                try
+                {
+                    tagStrings.ForEach(ts => tagIds.Add(Int32.Parse(ts)));
+                }
+                catch (Exception e)
+                {
+                    LogManager.GetLogger(typeof (AdminController)).Error(e);
+                    throw;
+                }
+
+                postService.CreatePost(new Post.Domain.Post
+                {
+                    Title = viewModel.Title,
+                    Description = viewModel.Description,
+                    Content = viewModel.Content,
+                    UrlSlug = viewModel.UrlSlug,
+                    Tags = postService.GetTags().Where(t => tagIds.Contains(t.Id)).Materialize()
+                });
+
+                return RedirectToAction("Dashboard");
+            }
+
+            viewModel.Tags = postService.GetTags();
+            viewModel.AssignedTags = new List<int>();
+
+            return View(viewModel);
+        }
+
+        [Route("EditPost")]
+        public ActionResult EditPost(int postId)
+        {
+            var postService = new PostService();
+            var post = postService.GetPost(postId);
+
+            return View(new CreatePostViewModel
+            {
+                PostId = post.Id,
+                Title = post.Title,
+                Description = post.Description,
+                Content = post.Content,
+                UrlSlug = post.UrlSlug,
+                Tags = postService.GetTags(),
+                AssignedTags = post.Tags.Select(t => t.Id).Materialize()
+            });
+        }
+
+        [Route("EditPost")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EditPost(CreatePostViewModel viewModel)
+        {
+            var postService = new PostService();
+
+            if (ModelState.IsValid)
+            {
+                var tagStrings = viewModel.SelectedTags.Split('-');
+                var tagIds = new List<int>();
+
+                try
+                {
+                    tagStrings.ForEach(ts => tagIds.Add(Int32.Parse(ts)));
+                }
+                catch (Exception e)
+                {
+                    LogManager.GetLogger(typeof(AdminController)).Error(e);
+                    throw;
+                }
+
+                postService.UpdatePost(new Post.Domain.Post
+                {
+                    Id = viewModel.PostId,
+                    Title = viewModel.Title,
+                    Description = viewModel.Description,
+                    Content = viewModel.Content,
+                    UrlSlug = viewModel.UrlSlug,
+                    Tags = postService.GetTags().Where(t => tagIds.Contains(t.Id)).Materialize()
+                });
+
+                return RedirectToAction("Dashboard");
+            }
+
+            viewModel.Tags = postService.GetTags();
+            viewModel.AssignedTags = postService.GetPost(viewModel.PostId).Tags.Select(t => t.Id).Materialize();
+
+            return View(viewModel);
+        }
+
+        [Route("DeletePost")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int postId)
+        {
+            var postService = new PostService();
+            postService.DeletePost(postId);
 
             return RedirectToAction("Dashboard");
         }
