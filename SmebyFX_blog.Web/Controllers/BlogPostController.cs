@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Linq;
 using System.Web.Mvc;
+using SmebyFX_blog.Core.Services;
 using SmebyFX_blog.Models;
 using SmebyFX_blog.Web.ViewModels;
 
@@ -10,32 +11,36 @@ namespace SmebyFX_blog.Web.Controllers
     [RoutePrefix("Blog")]
     public class BlogPostController : Controller
     {
+        private readonly PostService _postService;
         private const int PostsPerPage = 5;
         private readonly CultureInfo _culture = new CultureInfo("en-US");
+
+        public BlogPostController(PostService postService)
+        {
+            _postService = postService;
+        }
 
         [Route("~/")]
         [Route]
         [Route("Posts")]
         public ActionResult NewBlogPosts()
         {
-            //var service = new PostService();
             return View("BlogPosts",
                 new PostsWithTitleViewModel
                 {
                     Title = "New blog posts",
-                    Posts = Enumerable.Empty<Post>()//service.GetPosts().Take(PostsPerPage)
+                    Posts = _postService.GetPosts()
                 });
         }
 
         [Route("Tags/{tag}")]
         public ActionResult BlogPostsByTag(string tag)
         {
-            //var service = new PostService();
             return View("BlogPosts",
                 new PostsWithTitleViewModel
                 {
-                    Title = "BlogPostsByTag",//string.Format("Posts tagget with \"{0}\"", service.GetTag(tag).Title),
-                    Posts = Enumerable.Empty<Post>()//service.GetPosts(tag)
+                    Title = string.Format("Posts tagget with \"{0}\"", tag),
+                    Posts = _postService.GetPosts(tag)
                 });
         }
 

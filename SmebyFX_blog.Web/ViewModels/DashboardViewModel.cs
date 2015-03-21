@@ -6,6 +6,5 @@ namespace SmebyFX_blog.Web.ViewModels
     public class DashboardViewModel
     {
         public IEnumerable<Post> Posts { get; set; }
-        public IEnumerable<Tag> Tags { get; set; } 
     }
 }

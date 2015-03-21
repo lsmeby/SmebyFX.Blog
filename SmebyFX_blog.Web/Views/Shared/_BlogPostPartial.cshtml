@@ -1,5 +1,5 @@
 ﻿@using System.Globalization
-@model SmebyFX_blog.Post.Domain.Post
+@model SmebyFX_blog.Models.Post
            
 @{
     var culture = new CultureInfo("en-US");
@@ -25,8 +25,8 @@
         <div class="postTags">
             @foreach (var tag in Model.Tags)
             {
-                <a href="@Url.Action("BlogPostsByTag", "BlogPost", new {tag = tag.UrlSlug})">
-                    <span>@tag.Title</span>
+                <a href="@Url.Action("BlogPostsByTag", "BlogPost", new {tag})">
+                    <span>@tag</span>
                 </a>
             }
         </div>

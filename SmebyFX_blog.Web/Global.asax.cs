@@ -1,11 +1,7 @@
-﻿using System.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using SmebyFX_blog.Web.Authentication;
 
 namespace SmebyFX_blog.Web
 {
@@ -25,6 +21,8 @@ namespace SmebyFX_blog.Web
 //                var user = new ApplicationUser {UserName = "lars@smebyfx.no"};
 //                manager.Create(user, "passord");
 //            }
+
+            Bootstrapper.Initialize();
         }
     }
 }

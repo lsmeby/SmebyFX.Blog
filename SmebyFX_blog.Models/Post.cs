@@ -11,6 +11,6 @@ namespace SmebyFX_blog.Models
         public string UrlSlug { get; set; }
         public DateTime Published { get; set; }
         public DateTime? Modified { get; set; }
-        public IList<Tag> Tags { get; set; } 
+        public IList<string> Tags { get; set; }
     }
 }

@@ -28,7 +28,6 @@ namespace SmebyFX_blog.Web.ViewModels
         public string SelectedTags { get; set; }
 
         // To View
-        public List<Tag> Tags { get; set; }
         public List<int> AssignedTags { get; set; } 
     }
 }
