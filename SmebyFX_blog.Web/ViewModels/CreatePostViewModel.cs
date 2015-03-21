@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
-using SmebyFX_blog.Post.Domain;
+using SmebyFX_blog.Models;
 
 namespace SmebyFX_blog.Web.ViewModels
 {
